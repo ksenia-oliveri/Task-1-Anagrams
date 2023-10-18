@@ -1,15 +1,14 @@
 <?php
-require 'src/ExplodeClass.php';
-require 'src/SplitClass.php';
+require 'src/StringReverseClass.php';
 
 
-$obj = new Explode();
+$obj = new StringReverse();
 $obj->Explode();
 
 $srtToArr = $obj->string;
 
 foreach($srtToArr as &$word){
-    $chars = new Split();
+    $chars = new StringReverse();
     $chars->strSplit($word);
-
+    
 }
