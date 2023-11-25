@@ -1,5 +1,5 @@
 <?php 
-require_once './src/StringReverseClass.php';
+namespace Src;
 use PHPUnit\Framework\TestCase;
 
 class StringReverseClassTest extends TestCase 
@@ -9,36 +9,8 @@ class StringReverseClassTest extends TestCase
     public function testStringReverse() 
     {
         $stringReverse = new StringReverse();
-        $stringReverse->stringReverse($this->string);
-        $resultStrToArr = explode(' ', $this->string);
-        $expectedResult = ['hell4', 'w3or1d!'];
-       $this->assertEquals($expectedResult, $resultStrToArr);
-
-       foreach($resultStrToArr as &$word)
-       {
-       $resultChar = mb_str_split($word);
-       $resultReversed = array_reverse($resultChar);
-       $resultFiltred = [];
-       foreach($resultReversed as $char)
-       {
-            if(mb_ereg_match('^[a-zA-Z]+$', $char))
-            {
-                $resultFiltred[] = $char;
-            }
-       }
-       foreach($resultChar as &$char)
-       {
-        if(!mb_ereg_match('^[a-zA-Z]+$', $char)) 
-        {
-            continue;
-        }
-        $char = array_shift($resultFiltred);
-       }
-     $word = implode('', $resultChar);
+       $this->assertEquals('lleh4 d3ro1w!', $stringReverse->stringReverse($this->string));
     }
 
-       $stringResult = implode(' ', $resultStrToArr);
-       $expectedResultString = 'lleh4 d3ro1w!';
-       $this->assertEquals($expectedResultString, $stringResult);
     }
-}
+

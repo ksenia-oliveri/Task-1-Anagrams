@@ -1,4 +1,5 @@
 <?php
+namespace Src;
 Class  StringReverse {
 
     public $patternRegex = '^[a-zA-Z]+$';

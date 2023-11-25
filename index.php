@@ -1,5 +1,8 @@
 <?php
-require 'src/StringReverseClass.php';
+
+use Src\StringReverse;
+
+require_once('../vendor/autoload.php');
 
 
 $obj = new StringReverse;
