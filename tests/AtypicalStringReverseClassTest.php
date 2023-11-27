@@ -8,22 +8,26 @@ class AtypicalStringReverseClassTest extends TestCase
     public $string = 'hell4 wo3r1d!';
     public function testFailure1()
     {
-      $this->assertMatchesRegularExpression('~[a-zA-Z]+~', $this->string);
+      $stringReverse = new StringReverse();
+      $this->assertMatchesRegularExpression('~[a-zA-Z]+~', $stringReverse->stringReverse($this->string));
     }
 
       public function testFailure2()
-    {
-      $this->assertNotEmpty($this->string);
+    { 
+      $stringReverse = new StringReverse();
+      $this->assertNotEmpty($stringReverse->stringReverse($this->string));
     }
 
     public function testFailure3()
-    {
-        $this->assertMatchesRegularExpression('~[0-9]+~', $this->string);
+    { 
+      $stringReverse = new StringReverse();
+      $this->assertMatchesRegularExpression('~[0-9]+~', $stringReverse->stringReverse($this->string));
     }
 
     public function testFailure4()
-    {
-      $this->assertNotEquals(1, strlen($this->string)); 
+    { 
+      $stringReverse = new StringReverse();
+      $this->assertNotEquals(1, strlen($stringReverse->stringReverse($this->string))); 
     }
 
 }
