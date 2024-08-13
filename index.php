@@ -1,3 +1,4 @@
+
 <?php 
 function stringReverse($string): string { //Создаёт функцию и присвает ей тип string
     $strToArr = explode(' ', $string); // разбивает строку с аргументами на массив по пробелу
